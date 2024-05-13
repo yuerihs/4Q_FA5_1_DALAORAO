@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science #5 Part 2</title>
+</head>
+<body>
+
+  <p> Contact-Lists </p>
+  <input type="text" id="input" placeholder="Please enter your name: ">
+  <button onclick="add()">Add</button>
+  <button onclick="remove()">Remove</button>
+  <p id="output"></p>
+
+<script>
+   var elements = [];
+
+   function add(){ 
+
+    var person = document.getElementById("input");
+    var name = person.value;
+
+    if (elements.length >= 7) {
+      elements.shift();
+    }
+    elements.push(name);
+    document.getElementById("output").innerHTML = elements;
+
+  }
+  function remove(){
+    elements.pop();
+    document.getElementById("output").innerHTML = elements;
+  }
+    
+   function output(){
+    document.getElementById("output").innerHTML = elements;
+  }
+  </script>
+
+</body>
+</html>
